@@ -15,6 +15,7 @@
 		0B07E54A23706C640033C2DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B07E54823706C640033C2DD /* LaunchScreen.storyboard */; };
 		0B07E55223706D0B0033C2DD /* OuterPetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07E55123706D0B0033C2DD /* OuterPetalView.swift */; };
 		0B07E55423707F210033C2DD /* InnerCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07E55323707F200033C2DD /* InnerCircleView.swift */; };
+		0BC487422371DDFB00605945 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC487412371DDFA00605945 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0B07E54B23706C640033C2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B07E55123706D0B0033C2DD /* OuterPetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterPetalView.swift; sourceTree = "<group>"; };
 		0B07E55323707F200033C2DD /* InnerCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerCircleView.swift; sourceTree = "<group>"; };
+		0BC487412371DDFA00605945 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0B07E53D23706C620033C2DD /* AppDelegate.swift */,
 				0B07E53F23706C620033C2DD /* SceneDelegate.swift */,
 				0B07E54123706C620033C2DD /* ContentView.swift */,
+				0BC487412371DDFA00605945 /* SettingsView.swift */,
 				0B07E55323707F200033C2DD /* InnerCircleView.swift */,
 				0B07E55123706D0B0033C2DD /* OuterPetalView.swift */,
 				0B07E54323706C640033C2DD /* Assets.xcassets */,
@@ -155,6 +158,7 @@
 				0B07E55423707F210033C2DD /* InnerCircleView.swift in Sources */,
 				0B07E53E23706C620033C2DD /* AppDelegate.swift in Sources */,
 				0B07E54023706C620033C2DD /* SceneDelegate.swift in Sources */,
+				0BC487422371DDFB00605945 /* SettingsView.swift in Sources */,
 				0B07E54223706C620033C2DD /* ContentView.swift in Sources */,
 				0B07E55223706D0B0033C2DD /* OuterPetalView.swift in Sources */,
 			);

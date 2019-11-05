@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct OuterPetalView: View {
+    @State private var scaleInOut = false
+    @State private var rotateInOut = false
+    @State private var moveInOut  = false
     var body: some View {
         ZStack{
             VStack{
@@ -74,8 +77,15 @@ struct OuterPetalView: View {
                         .frame(width:30, height:150)
                         .offset(y:-120)
                 }.rotationEffect(.degrees(-30))
+                }.rotationEffect(.degrees(rotateInOut ? 90 : 0))
+                    .scaleEffect(scaleInOut ? 1 : 1/8)
+                    .animation((Animation.easeInOut.repeatForever(autoreverses: true).speed(0.2)))
+                    .onAppear(){
+                        self.rotateInOut.toggle()
+                        self.scaleInOut.toggle()
+                        self.moveInOut.toggle()
+                        
                 }
-                
                 Spacer()
             }
             
