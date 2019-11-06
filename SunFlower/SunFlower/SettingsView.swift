@@ -11,23 +11,25 @@ import SwiftUI
 struct SettingsView: View {
     
     
-    @State private var  toggleAnimation = true
     @State private var number : Int = 6
     @State private var selection: Int = 1
     @State private var date: Date = Date()
     @State private var email: String = ""
     @State private var showAlert = false
     @State private var animationSpeed : Double = 0.0
+    
+    @EnvironmentObject var settings : UserSettings
     var body: some View {
         NavigationView{
             Form{
                 //animation controls
                 Section(header: Text("Animation")) {
-                    Toggle(isOn: $toggleAnimation) {
+                    Toggle(isOn: $settings.isToggleOn) {
                         Text("Turn on animation")
                     }
                     Slider(value: $animationSpeed, in:0...1, step: 0.001){_ in
                         //Code to control animation speed
+                        self.settings.amimationSpeed = self.animationSpeed
                     }
                     
                     Text("Animation Speed is - \(animationSpeed, specifier: "%g")")
@@ -45,6 +47,7 @@ struct SettingsView: View {
                 //change petal color
                 Section(header: Text("Change Petal Colors")){
                     Button(action: {
+                        self.settings.changerPetalColor = true
                         self.showAlert.toggle()
                     }) {
                         
@@ -56,6 +59,8 @@ struct SettingsView: View {
                         
                     HStack{
                         Button(action: {
+                            self.settings.changerPetalColor = false
+
                             self.showAlert.toggle()
                         }){
                             Text("Yellow Petals")
@@ -90,6 +95,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView().environmentObject(UserSettings())
     }
 }

@@ -12,6 +12,7 @@ struct InnerCircleView: View {
     @State private var scaleInOut = false
     @State private var rotateInOut = false
     @State private var moveInOut  = false
+    @EnvironmentObject var settings : UserSettings
     var body: some View {
         ZStack {
                    Spacer()
@@ -89,12 +90,13 @@ struct InnerCircleView: View {
                        }.rotationEffect(.degrees(-30))
                    }.rotationEffect(.degrees(rotateInOut ? 90 : 0))
                        .scaleEffect(scaleInOut ? 1 : 1/8)
-            .animation((Animation.easeInOut.repeatForever(autoreverses: true).speed(1/12)))
+                    .animation((Animation.easeInOut.repeatForever(autoreverses: true).speed(settings.amimationSpeed)))
                                .onAppear(){
+                                if self.settings.isToggleOn {
                                    self.rotateInOut.toggle()
                                    self.scaleInOut.toggle()
                                    self.moveInOut.toggle()
-                                   
+                                }
                            }
             
         }
@@ -106,6 +108,6 @@ struct InnerCircleView: View {
 
 struct InnerCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        InnerCircleView()
+        InnerCircleView().environmentObject(UserSettings())
     }
 }
